@@ -1,7 +1,54 @@
-{{page-title "EmberFlowbiteExample"}}
+<header class="bg-blue-600 text-white py-4">
+  <div class="container mx-auto">
+    <h1 class="text-2xl font-bold">Ember + Flowbite Example Setup</h1>
+  </div>
+</header>
+<main class="container mx-auto py-8">
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold mb-4">Setup Overview</h2>
+    <ol class="list-decimal list-inside bg-white p-4 rounded shadow">
+      <li class="mb-2">
+        Create a new Ember project:
+        <pre class="bg-gray-100 p-2 rounded mt-1"><code>ember new ember-flowbite-example --lang en</code></pre>
+      </li>
+      <li class="mb-2">
+        Add Tailwind CSS to the project:
+        <pre class="bg-gray-100 p-2 rounded mt-1"><code>npx ember-apply tailwind</code></pre>
+      </li>
+      <li class="mb-2">
+        Set up Flowbite:
+        <ul class="list-disc list-inside ml-6">
+          <li>
+            Install Flowbite:
+            <pre class="bg-gray-100 p-2 rounded mt-1"><code>npm install flowbite</code></pre>
+          </li>
+          <li>
+            Add the Flowbite plugin to Tailwind configuration:
+            <pre class="bg-gray-100 p-2 rounded mt-1"><code>require('flowbite/plugin')</code></pre>
+          </li>
+          <li>
+            Update Tailwind content paths:
+            <pre class="bg-gray-100 p-2 rounded mt-1"><code>'./node_modules/flowbite/**/*.js'</code></pre>
+          </li>
+          <li>
+            Initialize Flowbite in your application setup:
+            <pre class="bg-gray-100 p-2 rounded mt-1"><code>initFlowbite()</code></pre>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </section>
 
-{{outlet}}
-
-{{! The following component displays Ember's default welcome message. }}
-<WelcomePage />
-{{! Feel free to remove this! }}
+  <section>
+    <h2 class="text-xl font-semibold mb-4">Example Flowbite Component</h2>
+    <div class="bg-white p-6 rounded shadow">
+      <button data-tooltip-target="tooltip-example" type="button" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+        Hover me
+      </button>
+      <div id="tooltip-example" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity">
+        Tooltip content
+        <div class="tooltip-arrow" data-popper-arrow></div>
+      </div>
+    </div>
+  </section>
+</main>
